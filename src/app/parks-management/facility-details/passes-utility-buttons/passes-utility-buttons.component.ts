@@ -73,7 +73,7 @@ export class PassesUtilityButtonsComponent implements OnDestroy {
         firstName: this.passFilterParams['firstName'],
         lastName: this.passFilterParams['lastName'],
         passStatus: this.passFilterParams['passStatus'],
-        reservationNumber: this.passFilterParams['reservationNumber'],
+        registrationNumber: this.passFilterParams['registrationNumber'],
       };
       Object.keys(obj).forEach((key) =>
         obj[key] === undefined ? delete obj[key] : {}

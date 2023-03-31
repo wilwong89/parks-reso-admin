@@ -88,7 +88,7 @@ describe('PassesUtilityButtonsComponent', () => {
       firstName: 'firstName',
       lastName: 'lastName',
       passStatus: 'reserved',
-      reservationNumber: '1234567890',
+      registrationNumber: '1234567890',
     });
     expect(windowSpy).toHaveBeenCalledTimes(1);
   });

@@ -140,7 +140,7 @@ export class MockData {
     firstName: 'firstName',
     lastName: 'lastName',
     email: 'mock@email.ca',
-    reservationNumber: '1234567890',
+    registrationNumber: '1234567890',
   };
 
   public static readonly mockPass_1 = {

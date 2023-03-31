@@ -90,7 +90,7 @@ export class PassesFilterComponent extends BaseFormComponent {
       firstName: new UntypedFormControl(this.data.firstName),
       lastName: new UntypedFormControl(this.data.lastName),
       email: new UntypedFormControl(this.data.email),
-      reservationNumber: new UntypedFormControl(this.data.reservationNumber),
+      registrationNumber: new UntypedFormControl(this.data.registrationNumber),
       isOverbooked: new UntypedFormControl(this.data.isOverbooked),
     });
     super.setFields();
