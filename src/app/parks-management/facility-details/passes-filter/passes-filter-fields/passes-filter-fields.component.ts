@@ -16,7 +16,7 @@ export class PassesFilterFieldsComponent implements OnChanges {
   @Input() lastName = new UntypedFormControl();
   @Input() email = new UntypedFormControl();
   @Input() reservationNumber = new UntypedFormControl();
-  @Input() overbooked = new UntypedFormControl();
+  @Input() isOverbooked = new UntypedFormControl();
   @Input() overbookedOptions;
 
   constructor() {}

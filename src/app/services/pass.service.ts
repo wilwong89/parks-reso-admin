@@ -153,7 +153,7 @@ export class PassService {
       lastName: params.lastName || null,
       email: params.email || null,
       type: params.type || null,
-      overbooked: params.overbooked || null,
+      isOverbooked: params.isOverbooked || null,
       ExclusiveStartKeyPK: params.ExclusiveStartKeyPK || null,
       ExclusiveStartKeySK: params.ExclusiveStartKeySK || null,
       manualLookup: params.manualLookup || null,
@@ -176,7 +176,7 @@ export class PassService {
       // No params in url. Set defaults
       params['date'] = this.utils.getTodayAsShortDate();
       params['type'] = this.getBookingTimesList(facility)[0];
-      params['overbooked'] = 'all';
+      params['isOverbooked'] = 'all';
     } else {
       // QueryParams need passStatus as an array.
       if (queryParams['passStatus']) {

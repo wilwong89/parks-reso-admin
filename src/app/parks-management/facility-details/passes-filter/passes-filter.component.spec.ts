@@ -34,7 +34,7 @@ describe('PassesFilterComponent', () => {
         FormsModule,
         ReactiveFormsModule,
         RouterTestingModule.withRoutes([
-          { path: 'passType', component: PassesFilterComponent },
+          { path: 'type', component: PassesFilterComponent },
         ]),
       ],
       providers: [
@@ -66,9 +66,9 @@ describe('PassesFilterComponent', () => {
     component.setForm();
     await fixture.isStable();
     await component.onSubmit();
-    expect(location.path()).toBe('/?passStatus=reserved&passType=Trail');
+    expect(location.path()).toBe('/?passStatus=reserved&type=Trail');
     expect(passServiceSpy).toHaveBeenCalledOnceWith({
-      passType: 'Trail',
+      type: 'Trail',
       park: 'MOC1',
       facilityName: 'Mock Facility 1',
       passStatus: 'reserved',
