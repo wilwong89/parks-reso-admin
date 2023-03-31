@@ -36,7 +36,7 @@ export class FacilityDetailsResolver implements Resolve<void> {
               filteredParams['park'],
               filteredParams['facilityName'],
               filteredParams['date'],
-              filteredParams['passType']
+              filteredParams['type']
             );
           } else {
             // TODO: Handle the error

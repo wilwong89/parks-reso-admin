@@ -7,8 +7,8 @@ import { UntypedFormControl } from '@angular/forms';
   styleUrls: ['./passes-filter-fields.component.scss'],
 })
 export class PassesFilterFieldsComponent implements OnChanges {
-  @Input() passType = new UntypedFormControl();
-  @Input() passTypeOptions;
+  @Input() type = new UntypedFormControl();
+  @Input() typeOptions;
   @Input() date = new UntypedFormControl();
   @Input() passStatus = new UntypedFormControl();
   @Input() passStatusOptions;

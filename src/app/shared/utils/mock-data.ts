@@ -129,12 +129,12 @@ export class MockData {
   };
 
   public static readonly mockPartialPassFilters_1 = {
-    passType: 'Trail',
+    type: 'Trail',
     passStatus: 'reserved',
   };
 
   public static readonly mockFullPassFilters_1 = {
-    passType: 'Trail',
+    type: 'Trail',
     date: '2022-12-19',
     passStatus: 'reserved',
     firstName: 'firstName',

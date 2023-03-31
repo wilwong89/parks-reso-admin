@@ -2,8 +2,8 @@
   <div class="form-section">
     <app-passes-filter-fields
       *ngIf="bookingTimesList"
-      [passType]="fields?.passType"
-      [passTypeOptions]="bookingTimesList"
+      [type]="fields?.type"
+      [typeOptions]="bookingTimesList"
       [date]="fields?.date"
       [passStatus]="fields?.passStatus"
       [passStatusOptions]="statusesList"

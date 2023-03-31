@@ -112,7 +112,7 @@ export class PassesUtilityButtonsComponent implements OnDestroy {
         </style>`
       );
       WindowPrt.document.write(
-        `<h4>${this.passFilterParams['passType']} passes for ${this.facility.name}</h4>`
+        `<h4>${this.passFilterParams['type']} passes for ${this.facility.name}</h4>`
       );
       WindowPrt.document.write(printContent.innerHTML);
       WindowPrt.document.close();

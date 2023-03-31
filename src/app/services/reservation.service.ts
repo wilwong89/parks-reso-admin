@@ -21,7 +21,7 @@ export class ReservationService {
     private loadingService: LoadingService
   ) {}
 
-  async fetchData(parkSk, facilitySk, resDate = null, selectedPassType = null) {
+  async fetchData(parkSk, facilitySk, resDate = null, selectedType = null) {
     let res;
     let errorSubject = '';
     let dataTag;
@@ -43,9 +43,9 @@ export class ReservationService {
         );
       }
       this.dataService.setItemValue(dataTag, res);
-      if (resDate && selectedPassType) {
+      if (resDate && selectedType) {
         if (res[0]) {
-          this.setCapacityBar(res[0], selectedPassType);
+          this.setCapacityBar(res[0], selectedType);
         } else {
           // No res Object. Use facility cap
           const facility = this.dataService.getItemValue(
@@ -56,7 +56,7 @@ export class ReservationService {
             {
               capPercent: 0,
               reserved: 0,
-              capacity: facility.bookingTimes[selectedPassType].max,
+              capacity: facility.bookingTimes[selectedType].max,
               modifier: 0,
               overbooked: 0,
               style: 'success',
@@ -95,7 +95,7 @@ export class ReservationService {
     return res;
   }
 
-  setCapacityBar(reservationObj, selectedPassType) {
+  setCapacityBar(reservationObj, selectedType) {
     let capBarObj = {
       capPercent: 0,
       reserved: 0,
@@ -108,20 +108,20 @@ export class ReservationService {
     if (
       reservationObj &&
       reservationObj.capacities &&
-      reservationObj.capacities[selectedPassType]
+      reservationObj.capacities[selectedType]
     ) {
       const modifiedCapacity =
-        reservationObj.capacities[selectedPassType].baseCapacity +
-        reservationObj.capacities[selectedPassType].capacityModifier;
+        reservationObj.capacities[selectedType].baseCapacity +
+        reservationObj.capacities[selectedType].capacityModifier;
       capBarObj.capacity = modifiedCapacity;
       capBarObj.reserved =
         modifiedCapacity +
-        reservationObj.capacities[selectedPassType].overbooked -
-        reservationObj.capacities[selectedPassType].availablePasses;
+        reservationObj.capacities[selectedType].overbooked -
+        reservationObj.capacities[selectedType].availablePasses;
       capBarObj.modifier =
-        reservationObj.capacities[selectedPassType].capacityModifier;
+        reservationObj.capacities[selectedType].capacityModifier;
       capBarObj.overbooked =
-        reservationObj.capacities[selectedPassType].overbooked;
+        reservationObj.capacities[selectedType].overbooked;
     }
 
     capBarObj.capPercent = capBarObj.capacity

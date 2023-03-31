@@ -28,7 +28,7 @@ export class PassService {
   // passSk:,
   // parkSk:,
   // facilitySk:,
-  // passType:,
+  // type:,
   // ExclusiveStartKeyPK:,
   // ExclusiveStartKeySK:,
   // appendResults: boolean,
@@ -62,7 +62,7 @@ export class PassService {
         !params.passId &&
         params.park &&
         params.facilityName &&
-        params.passType
+        params.type
       ) {
         dataTag = Constants.dataIds.PASSES_LIST;
         this.loadingService.addToFetchList(dataTag);
@@ -152,7 +152,7 @@ export class PassService {
       firstName: params.firstName || null,
       lastName: params.lastName || null,
       email: params.email || null,
-      passType: params.passType || null,
+      type: params.type || null,
       overbooked: params.overbooked || null,
       ExclusiveStartKeyPK: params.ExclusiveStartKeyPK || null,
       ExclusiveStartKeySK: params.ExclusiveStartKeySK || null,
@@ -175,7 +175,7 @@ export class PassService {
     if (Object.keys(queryParams).length === 0) {
       // No params in url. Set defaults
       params['date'] = this.utils.getTodayAsShortDate();
-      params['passType'] = this.getBookingTimesList(facility)[0];
+      params['type'] = this.getBookingTimesList(facility)[0];
       params['overbooked'] = 'all';
     } else {
       // QueryParams need passStatus as an array.

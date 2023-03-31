@@ -84,7 +84,7 @@ export class PassesFilterComponent extends BaseFormComponent {
 
   setForm() {
     this.form = new UntypedFormGroup({
-      passType: new UntypedFormControl(this.data.passType),
+      type: new UntypedFormControl(this.data.type),
       date: new UntypedFormControl(this.data.date),
       passStatus: new UntypedFormControl(this.data.passStatus),
       firstName: new UntypedFormControl(this.data.firstName),
@@ -106,7 +106,7 @@ export class PassesFilterComponent extends BaseFormComponent {
     let params = Object.assign(resFields, {
       park: this.facility.pk.split('::')[1],
       facilityName: this.facility.sk,
-      passType: resFields?.passType || null,
+      type: resFields?.type || null,
     });
     this.passService.fetchData(params);
 
@@ -114,7 +114,7 @@ export class PassesFilterComponent extends BaseFormComponent {
       this.facility.pk.split('::')[1],
       this.facility.sk,
       resFields?.date || null,
-      resFields?.passType || null
+      resFields?.type || null
     );
   }
 

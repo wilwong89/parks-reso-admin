@@ -37,7 +37,7 @@ describe('FacilityDetailsResolver', () => {
         park: facility.pk.split('::')[1],
         facilityName: facility.name,
         date: null,
-        passType: null,
+        type: null,
       };
     },
   };

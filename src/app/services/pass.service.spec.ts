@@ -33,7 +33,7 @@ describe('PassService', () => {
   let mockPassGetParams = {
     park: 'Mock Park 1',
     facilityName: 'Mock Facility 1',
-    passType: 'AM',
+    type: 'AM',
   };
 
   let mockQRPassGetParams = {
@@ -52,7 +52,7 @@ describe('PassService', () => {
   let mockApiService = {
     get: (id, params) => {
       if (id === 'pass') {
-        if (params.passType === 'append') {
+        if (params.type === 'append') { //params.passType
           return mockPassAppendRes;
         } else if (params.manualLookup) {
           return mockManualLookupPassGetRes;
@@ -191,7 +191,7 @@ describe('PassService', () => {
 
   it('fetches passes and appends them to existing pass list', async () => {
     let mockPassAppendParams = { ...mockPassGetParams, appendResults: true };
-    mockPassAppendParams.passType = 'append';
+    mockPassAppendParams.type = 'append';
     await service.fetchData(mockPassAppendParams);
     expect(loadingSpy).toHaveBeenCalledTimes(1);
     delete mockPassAppendParams.appendResults;
